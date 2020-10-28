@@ -1,0 +1,16 @@
+*.pyc
+*~
+### Django ###
+__pycache__
+/proveedor/venv/
+db.sqlite3
+/media
+.DS_Store
+
+*.log
+*.pot
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
