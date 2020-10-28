@@ -2,7 +2,7 @@
 *~
 ### Django ###
 __pycache__
-/proveedor/venv/
+venv/
 db.sqlite3
 /media
 .DS_Store
@@ -12,5 +12,4 @@ db.sqlite3
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
 *.py[cod]
