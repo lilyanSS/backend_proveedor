@@ -8,24 +8,24 @@ sudo apt install python3.7 python3-dev python3-pip
 ``` 
 
 ## paso 2 
-   - Crear entorno virtual en ubuntu  desde la linea de comandos en la carpeta del proyecto
+   - Crear entorno virtual en ubuntu  dentro de la carpeta proveedor desde la linea de comandos en la carpeta del proyecto
     ```bash
       python3 -m venv venv
     ```
 
-   - crear entorno virtual en Windows  desde la linea de comandos en la carpeta del proyecto
+   - crear entorno virtual en Windows dentro de la carpeta proveedor  desde la linea de comandos en la carpeta del proyecto
     ```bash
         python -m venv venv
     ```
 
 ## paso 3 
 
-   - Ejecutar entorno virtual en ubuntu desde la linea de comandos en la carpeta del proyecto
+   - Ejecutar entorno virtual en ubuntu dentro de la carpeta proveedor  desde la linea de comandos en la carpeta del proyecto
       ```bash
         source venv/bin/activate
         ```
 
-   - ejecutar entorno virtual en Windows desde la linea de comandos en la carpeta del proyecto
+   - ejecutar entorno virtual en Windows dentro de la carpeta proveedor  desde la linea de comandos en la carpeta del proyecto
        ```bash
        venv\Scripts\activate
        ```
@@ -54,10 +54,12 @@ sudo apt install python3.7 python3-dev python3-pip
 ## paso 6 
    - crear migraciones
     python manage.py makemigrations
+    
+## aplicar migraciones
+        python manage.py migrate  
 
 ## paso 7 
    - correr el servidor
     python manage.py runserver
 
-## aplicar migraciones
-        python manage.py migrate      
+    

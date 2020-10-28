@@ -2,7 +2,7 @@
 *~
 ### Django ###
 __pycache__
-venv/
+myvenv/
 db.sqlite3
 /media
 .DS_Store
