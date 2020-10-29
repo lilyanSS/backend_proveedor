@@ -38,9 +38,30 @@ class StatusSerializer(DynamicFieldsModelSerializer):
         fields =['id', 'name']        
                
 class VehiclesSerializer(DynamicFieldsModelSerializer):
+    data = serializers.SerializerMethodField()
     class Meta:
         model = models.Vehicle
         fields ="__all__"  
+
+    def get_data(self, obj):
+        vehicle= models.Vehicle.objects.get(id=obj.id)
+        photos=[]
+        get_photos = models.Photos.objects.filter(vehicle= vehicle.id)
+
+        for item in get_photos:
+            photos.append({
+                "img":item.image_url.url,
+                "description":item.description
+            })
+      
+        data={
+            'status':vehicle.status.name,
+            'provider':vehicle.provider.first_name,
+            'brand':vehicle.brand.name,
+            'type':vehicle.type.name,
+            'photos':photos            
+        }
+        return data    
 
 class PhotosSerializer(DynamicFieldsModelSerializer):
     class Meta:
