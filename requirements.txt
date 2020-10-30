@@ -5,6 +5,7 @@ coreschema==0.0.4
 Django==2.2.16
 django-cors-headers==3.5.0
 django-environ==0.4.5
+django-resized==0.3.11
 django-rest-swagger==2.2.0
 djangorestframework==3.12.1
 idna==2.10

@@ -79,6 +79,10 @@ class VehicleView(viewsets.ModelViewSet):
         except KeyError:
             return [permission() for permission in self.permission_classes]
 
+    def get_queryset(self):
+        queryset = models.Vehicle.objects.filter(sold=False)
+        return queryset
+
 class PhotosView(viewsets.ModelViewSet):
     queryset = models.Photos.objects.all()
     serializer_class = serializer.PhotosSerializer

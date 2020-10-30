@@ -56,7 +56,7 @@ class VehiclesSerializer(DynamicFieldsModelSerializer):
       
         data={
             'status':vehicle.status.name,
-            'provider':vehicle.provider.first_name,
+            'provider':vehicle.provider.first_name +" " + vehicle.provider.last_name ,
             'brand':vehicle.brand.name,
             'type':vehicle.type.name,
             'photos':photos            
