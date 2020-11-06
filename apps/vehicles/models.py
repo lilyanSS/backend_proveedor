@@ -52,7 +52,7 @@ class Vehicle(models.Model):
         return self.model
 
 class Photos(models.Model):
-    image_url= models.ImageField(upload_to='static/images/Photos', blank=True)
+    image_url= models.ImageField(upload_to='static/photos/', blank=True)
     description = models.TextField(verbose_name="Description", null=True, blank=True)
     vehicle = models.ForeignKey(Vehicle, on_delete=models.PROTECT, verbose_name="Vehicle", related_name='pictures')
     
