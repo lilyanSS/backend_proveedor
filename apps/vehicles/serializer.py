@@ -66,4 +66,5 @@ class VehiclesSerializer(DynamicFieldsModelSerializer):
 class PhotosSerializer(DynamicFieldsModelSerializer):
     class Meta:
         model = models.Photos
-        fields ="__all__"           
+        fields ="__all__"
+

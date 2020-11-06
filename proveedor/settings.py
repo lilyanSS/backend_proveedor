@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 CORS_ALLOW_METHODS = [
@@ -179,13 +181,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-STATIC_ROOT = os.path.normpath(os.path.join(os.path.dirname(BASE_DIR), 'static'))
-STATICFILES_DIRS = []
+STATIC_ROOT = os.path.normpath(os.path.join(os.path.dirname(BASE_DIR), 'staticfiles'))
+# STATICFILES_DIRS = []
 STATIC_URL = '/static/'
 
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+# MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 DJANGORESIZED_DEFAULT_SIZE = [1920, 1080]
 DJANGORESIZED_DEFAULT_QUALITY = 75
@@ -193,3 +199,6 @@ DJANGORESIZED_DEFAULT_KEEP_META = True
 DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'JPEG': ".jpg"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
