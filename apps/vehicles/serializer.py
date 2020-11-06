@@ -47,7 +47,6 @@ class VehiclesSerializer(DynamicFieldsModelSerializer):
         vehicle= models.Vehicle.objects.get(id=obj.id)
         photos=[]
         get_photos = models.Photos.objects.filter(vehicle= vehicle.id)
-
         for item in get_photos:
             photos.append({
                 "img":item.image_url.url,
@@ -59,7 +58,8 @@ class VehiclesSerializer(DynamicFieldsModelSerializer):
             'provider':vehicle.provider.first_name +" " + vehicle.provider.last_name ,
             'brand':vehicle.brand.name,
             'type':vehicle.type.name,
-            'photos':photos            
+            'photos':photos,
+            'image':vehicle.image.url             
         }
         return data    
 
