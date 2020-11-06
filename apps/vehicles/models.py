@@ -39,7 +39,7 @@ class Vehicle(models.Model):
     model = models.CharField(max_length=200)
     line = models.CharField(max_length=100)
     cubic_centimeters  = models.CharField(max_length=150)
-    image = ResizedImageField(upload_to = "imagenes/", blank=True, size=[500, 300])
+    image = ResizedImageField(upload_to = "static/imagenes/", blank=True, size=[500, 300])
     price= models.CharField(max_length=50)
     type = models.ForeignKey(Type, on_delete=models.PROTECT, null=True, blank=True, related_name='type_vehiculo')
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, null=True, blank=True, related_name='brand')
@@ -52,7 +52,7 @@ class Vehicle(models.Model):
         return self.model
 
 class Photos(models.Model):
-    image_url= models.ImageField(upload_to='images/Photos', blank=True)
+    image_url= models.ImageField(upload_to='static/images/Photos', blank=True)
     description = models.TextField(verbose_name="Description", null=True, blank=True)
     vehicle = models.ForeignKey(Vehicle, on_delete=models.PROTECT, verbose_name="Vehicle", related_name='pictures')
     

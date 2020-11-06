@@ -72,7 +72,7 @@ class VehicleView(viewsets.ModelViewSet):
             'books': [IsAuthenticated],
             'destroy': [IsAuthenticated],
             'update': [IsAuthenticated],
-            'retrieve': [IsAuthenticated],
+            'retrieve': [AllowAny],
         }
         try:
             return [permission() for permission in permission_classes_by_action[self.action]]
@@ -101,5 +101,17 @@ class PhotosView(viewsets.ModelViewSet):
         except KeyError:
             return [permission() for permission in self.permission_classes]  
   
+# class PhotosView(viewsets.ModelViewSet):
+#     queryset = models.Photos.objects.all()
+#     serializer_class = serializer.VehicleById
+    
+#     def get_permissions(self):
+#             permission_classes_by_action = {
+#             'list': [AllowAny]
+#         }
+#         try:
+#             return [permission() for permission in permission_classes_by_action[self.action]]
+#         except KeyError:
+#             return [permission() for permission in self.permission_classes]  
 
 
