@@ -132,14 +132,14 @@ SWAGGER_SETTINGS = {
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'proveedor',
-        'USER': 'jaeger',
-        'PASSWORD': 'jaeger-admin',
-        'HOST': '157.230.217.60',
-        'PORT': '3306',  
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.mysql', 
+        # 'NAME': 'proveedor',
+        # 'USER': 'jaeger',
+        # 'PASSWORD': 'jaeger-admin',
+        # 'HOST': '157.230.217.60',
+        # 'PORT': '3306',  
 
         # 'USER': 'lilyan',
         # 'PASSWORD': 'admin',
