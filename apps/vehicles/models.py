@@ -49,7 +49,7 @@ class Vehicle(models.Model):
 
 
     def __str__(self):
-        return self.model
+        return f'{self.model} {self.line} {self.brand}' 
 
 class Photos(models.Model):
     image_url= models.ImageField(upload_to='static/photos/', blank=True)
