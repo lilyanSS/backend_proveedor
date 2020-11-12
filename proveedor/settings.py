@@ -76,11 +76,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.DjangoModelPermissions',
     ],
-    # 'DEFAULT_AUTHENTICATION_CLASSES': [
-    #     'rest_framework.authentication.TokenAuthentication',
-    #     'rest_framework.authentication.BasicAuthentication',
-    #     'rest_framework.authentication.SessionAuthentication',
-    # ],
+
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 15,
     
@@ -140,7 +136,7 @@ DATABASES = {
         'PASSWORD': 'sica12345.',
         'HOST': 'lilyanSica.mysql.pythonanywhere-services.com',
         'PORT': '3306',  
-
+        # 'NAME':'proveedor,
         # 'USER': 'lilyan',
         # 'PASSWORD': 'admin',
         # 'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
