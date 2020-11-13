@@ -108,18 +108,6 @@ SWAGGER_SETTINGS = {
     # 'USE_SESSION_AUTH': True,
     "LOGIN_URL": 'rest_framework:login',
     "LOGOUT_URL": 'rest_framework:logout',
-    # 'SECURITY_DEFINITIONS': {
-    #     'api_key': {
-    #         'type': 'apiKey',
-    #         'description': 'Personal API Key authorization',
-    #         'name': 'Authorization',
-    #         'in': 'header',
-    #     }
-    # },
-    # 'APIS_SORTER': 'alpha',
-    # "SHOW_REQUEST_HEADERS": True,
-    # "VALIDATOR_URL": None,
-    # 'api_key': 'veristoken fbe16f3a4c292c774c54',  # An API key
 }
 
 
@@ -136,11 +124,6 @@ DATABASES = {
         'PASSWORD': 'sica12345.',
         'HOST': 'lilyanSica.mysql.pythonanywhere-services.com',
         'PORT': '3306',  
-        # 'NAME':'proveedor,
-        # 'USER': 'lilyan',
-        # 'PASSWORD': 'admin',
-        # 'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        # 'PORT': '3306',
     }
 }
 
